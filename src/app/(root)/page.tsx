@@ -10,7 +10,7 @@ interface Route {
 export default function RoutesPage() {
   const routes: Route[] = [
     { path: '/nosotros', name: 'Nosotros' },
-    { path: '/productos', name: 'Productos' },
+    { path: '/products', name: 'Productos' },
     { path: '/osmosis', name: 'Sistemas de Ósmosis' },
   ];
 

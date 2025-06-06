@@ -1,83 +1,98 @@
-"use client"
-import { useEffect, useState } from "react"
-import ProductCard from "./product-card"
-import "./product-card.css"
+"use client";
+import ProductCard from "./product-card";
+import "./product-card.css";
 
-// Tipo basado en el esquema proporcionado
+type ImageFormat = {
+  name: string;
+  hash: string;
+  ext: string;
+  mime: string;
+  path: string | null;
+  width: number;
+  height: number;
+  size: number;
+  sizeInBytes: number;
+  url: string;
+};
+
+type ImageAttributes = {
+  name: string;
+  alternativeText: string | null;
+  caption: string | null;
+  width: number;
+  height: number;
+  formats: {
+    thumbnail?: ImageFormat;
+    small?: ImageFormat;
+    medium?: ImageFormat;
+    large?: ImageFormat;
+  };
+  hash: string;
+  ext: string;
+  mime: string;
+  size: number;
+  url: string;
+  previewUrl: string | null;
+  provider: string;
+  provider_metadata: null;
+  createdAt: string;
+  updatedAt: string;
+};
+
+type CategoryAttributes = {
+  name: string;
+  slug: string;
+};
+
+type ProductAttributes = {
+  productName: string;
+  slug: string;
+  description: string;
+  active: boolean;
+  price: number;
+  origin: "españa";
+  isFeatured: boolean;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  images: {
+    data: {
+      id: number;
+      attributes: ImageAttributes;
+    } | null;
+  };
+  category_product: {
+    data: {
+      attributes: CategoryAttributes;
+    } | null;
+  };
+};
+
 type Product = {
-  id: number
-  attributes: {
-    productName: string
-    slug: string
-    description: string
-    images: {
-      data: {
-        attributes: {
-          url: string
-          alternativeText: string
-        }
-      }
-    }
-    active: boolean
-    price: number
-    origin: "españa"
-    isFeatured: boolean
-    category_product: {
-      data: {
-        attributes: {
-          name: string
-        }
-      }
-    }
-  }
+  id: number;
+  attributes: ProductAttributes;
+};
+
+interface ProductGridProps {
+  products: Product[];
 }
 
-export default function ProductGrid() {
-  const [products, setProducts] = useState<Product[]>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        // Ajusta la URL a tu endpoint real
-        const response = await fetch("/api/products?populate=*")
-
-        if (!response.ok) {
-          throw new Error("Error al cargar los productos")
-        }
-
-        const data = await response.json()
-        setProducts(data.data)
-      } catch (err) {
-        setError("No se pudieron cargar los productos. Por favor, inténtalo de nuevo más tarde.")
-        console.error("Error fetching products:", err)
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchProducts()
-  }, [])
-
-  if (loading) {
-    return <div className="loading">Cargando productos...</div>
-  }
-
-  if (error) {
-    return <div className="error">{error}</div>
-  }
-
-  // Filtrar productos activos
-  const activeProducts = products.filter((product) => product.attributes.active)
+export default function ProductGrid({ products }: ProductGridProps) {
+  // Filtra productos activos
+  const activeProducts = products.filter((product) => product.attributes.active);
 
   return (
     <div className="product-grid">
       {activeProducts.length > 0 ? (
-        activeProducts.map((product) => <ProductCard key={product.id} product={product} />)
+        activeProducts.map((product) => (
+          <ProductCard 
+            key={product.id} 
+            product={product} 
+          />
+        ))
       ) : (
         <p className="no-products">No hay productos disponibles actualmente.</p>
       )}
     </div>
-  )
+  );
 }
