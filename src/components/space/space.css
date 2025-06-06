@@ -1,0 +1,30 @@
+/* Estilos Footer */
+.spacio {
+    position: relative;
+    background-color: #ffffff;
+    
+    overflow: hidden;
+    padding: 2rem 1.5rem;
+    font-size: 14px;
+}
+
+.spacio::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+    border-right: 100vw solid white; /* Triángulo blanco inclinado */
+    z-index: 0;
+}
+
+.spacio-content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+}

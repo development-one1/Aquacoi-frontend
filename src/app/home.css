@@ -1,0 +1,22 @@
+/* Contenedor principal */
+.home-container {
+  display: grid;
+  grid-template-rows: 20px 1fr 20px;
+  align-items: center;
+  justify-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  padding-bottom: 5rem;
+  gap: 4rem;
+  font-family: var(--font-geist-sans);
+}
+
+/* Contenido principal */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  grid-row-start: 2;
+  align-items: center;
+}
+

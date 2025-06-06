@@ -1,0 +1,235 @@
+/* Hero Section - Base */
+.hero {
+  background-image: url("/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
+  min-height: 70vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.hero-content-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.2;
+  color: #2e3a59;
+  margin-bottom: 0.5rem;
+}
+
+.hero .subheadline {
+  font-weight: 300;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  color: #3d506d;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  margin: 1rem 0;
+  font-size: clamp(1rem, 1.1vw, 1.1rem);
+  color: #4c4c4c;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.75rem; /* Reducir espacio entre botones */
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.5rem 1.25rem; /* Tamaño más compacto (original: 0.75rem 1.5rem) */
+  font-weight: 600; /* Peso de fuente ligeramente menor que "bold" */
+  border-radius: 6px; /* Bordes ligeramente menos redondeados */
+  font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+  /* Mantener las demás propiedades */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra más sutil */
+  min-width: 120px; /* Ancho mínimo reducido */
+}
+
+/* Efectos hover (mantener consistencia) */
+.btn-primary:hover, 
+.btn-secondary:hover {
+  transform: translateY(-1px); /* Movimiento más sutil */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.btn-primary {
+  background-color: #00b6e0;
+  color: white;
+  border: 2px solid #00b6e0;
+}
+
+.btn-primary:hover {
+  background-color: #009fc3;
+  border-color: #009fc3;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #2e3a59;
+  border: 2px solid #ddd;
+}
+
+.btn-secondary:hover {
+  background-color: #f7f7f7;
+  transform: translateY(-2px);
+}
+
+/* Overlapping Cards Container */
+.overlapping-cards-container {
+  max-width: 1200px;
+  margin: -80px auto 0;
+  padding: 0 20px;
+  position: relative;
+  z-index: 3;
+}
+
+.overlapping-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+/* Card Styles */
+.overlap-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.overlap-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.overlap-card h3 {
+  color: #0077b6;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.overlap-card p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.card-link {
+  color: #00b4d8;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.card-link:hover {
+  color: #0077b6;
+}
+
+.card-link::after {
+  content: "→";
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.card-link:hover::after {
+  transform: translateX(4px);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .hero {
+    min-height: 60vh;
+    padding: 60px 20px;
+  }
+  
+  .overlapping-cards-container {
+    margin-top: -60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 50px 20px 120px;
+    min-height: auto;
+  }
+  
+  .hero-content-wrapper {
+    text-align: center;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .btn {
+    flex: 0 0 calc(50% - 0.5rem);
+  }
+  
+  .overlapping-cards-container {
+    margin-top: -100px;
+  }
+  
+  .overlapping-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 15px 100px;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero .subheadline {
+    font-size: 1.3rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .btn {
+    flex: 1 0 auto;
+    width: 100%;
+  }
+  
+  .overlap-card {
+    padding: 1.25rem;
+  }
+}

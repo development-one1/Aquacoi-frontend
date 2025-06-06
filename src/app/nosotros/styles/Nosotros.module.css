@@ -1,0 +1,161 @@
+.container {
+  min-height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.card {
+  position: relative;
+  background-color: white;
+  max-width: 1000px;
+  width: 100%;
+  padding: 2.5rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo {
+  height: auto;
+  width: auto;
+}
+
+.button {
+  background-color: #06b6d4;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.button:hover {
+  background-color: #0891b2;
+}
+
+.iconoGota {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.iconoWrapper {
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 9999px;
+  border: 4px solid transparent;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gota {
+  width: 90px;
+  height: 90px;
+}
+
+.titulo {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.titulo h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.titulo p {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0;
+}
+
+.separator {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 1.5rem 0;
+}
+
+.texto {
+  color: #374151;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.texto p {
+  margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .card {
+    padding: 2rem 1rem;
+    margin: 0.5rem;
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+  
+  .button {
+    align-self: center;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .iconoGota {
+    top: -25px;
+  }
+  
+  .gota {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .titulo h2 {
+    font-size: 1.3rem;
+  }
+  
+  .titulo p {
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    padding: 1.5rem 1rem;
+  }
+  
+  .titulo {
+    margin-top: 20px;
+  }
+  
+  .texto {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}

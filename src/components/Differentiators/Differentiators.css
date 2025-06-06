@@ -1,0 +1,93 @@
+.differentiation-container {
+  background-color: #f8fafc;
+  padding: 3rem 2rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.content-wrapper {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 4rem;
+  align-items: center;
+}
+
+.differentiation-content {
+  flex: 1;
+}
+
+.title {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.description {
+  color: #4a5568;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+}
+
+.benefit-item {
+  color: #2d3748;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  padding-left: 1.8rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.benefit-item:before {
+  content: "✓";
+  color: #3182ce;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.brand-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.brand-numbers {
+  text-align: center;
+}
+
+.number {
+  color: #3182ce;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  line-height: 1;
+}
+
+.brand-name {
+  color: #2c3e50;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .brand-content {
+    margin-top: 2rem;
+  }
+}

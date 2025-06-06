@@ -1,0 +1,235 @@
+/* Estilos base */
+.navbar {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* Logo */
+.logo-section {
+  display: flex;
+  align-items: center;
+  z-index: 1010;
+}
+
+/* Menú de navegación (desktop) */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  color: #007fac;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+  padding: 0.5rem 0;
+}
+
+.nav-item:hover {
+  color: #005d7a;
+}
+
+/* Iconos sociales */
+.social-icons {
+  display: flex;
+  gap: 0.8rem;
+  margin: 0 1rem;
+}
+
+.social-icons a {
+  color: #007fac;
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+  color: #005d7a;
+  transform: translateY(-2px);
+}
+
+/* Botón cliente */
+.client-button {
+  background: #008cb1;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.client-button:hover {
+  background: #007398;
+  transform: translateY(-2px);
+}
+
+/* Botón hamburguesa (mobile) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1010;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #007fac;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Menú móvil abierto */
+.menu-toggle.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* Menú de productos desplegable */
+.products-menu {
+  position: relative;
+}
+
+.products-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.chevron-icon {
+  font-size: 0.8rem;
+  margin-left: 0.3rem;
+  transition: transform 0.2s;
+}
+
+.products-menu:hover .chevron-icon {
+  transform: rotate(180deg);
+}
+
+
+.products-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  min-width: 280px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1.5rem;
+  color: #007fac;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.dropdown-item:hover {
+  background: #f0f9ff;
+  color: #005d7a;
+}
+
+/* Estilos para móvil */
+@media (max-width: 768px) {
+  .products-menu {
+    width: 100%;
+    text-align: center
+  }
+  
+  .products-dropdown {
+    position: static;
+    box-shadow: none;
+    padding: 0;
+    margin-top: 0.5rem;
+    background: transparent;
+    min-width: auto;;
+  }
+
+  .products-dropdown.mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dropdown-item {
+    padding: 0.8rem 0;
+    font-size: 0.9rem;
+    white-space: normal;
+    text-align: center;
+  }
+}
+/* otro codigo */
+
+/* Responsive: Mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .navbar.open::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+}

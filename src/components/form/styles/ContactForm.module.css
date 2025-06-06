@@ -1,0 +1,112 @@
+/* components/form/styles/ContactForm.module.css */
+/* Aqui es donde toca editar */
+.contactSection {
+  position: relative;
+  margin: 80px auto -60px; /* Empuja hacia abajo y compensa el margen */
+  padding: 2rem;
+  background-color: white; /* Fondo blanco sólido */
+  border-radius: 2px;
+  max-width: 480px;
+  height: 450px;
+  z-index: 1; /* Asegura que esté sobre el fondo azul */
+  border: 1px solid #f0f0f0; /* Borde sutil */
+}
+
+.contactTitle {
+  text-align: left;
+  font-size: 2rem;
+  color: #313359;
+  margin: -0.5rem 0 1rem 0;
+  font-weight: 200;
+}
+
+/* subtitulo */
+.contactSubtitle {
+  text-align: left;
+  color: rgba(107, 106, 109, 0.9);
+  font-size: 0.80rem;
+  white-space: nowrap; /* Fuerza una sola línea */
+  overflow: hidden; /* Opcional: evita desbordamiento */
+  text-overflow: ellipsis; /* Opcional: añade "..." si el texto es largo */
+  display: inline-block; /* Permite nowrap sin forzar width */
+  max-width: 100%; /* Respeta el ancho del contenedor */
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.formGroup label {
+  color: #3f3e3e;
+  font-weight: 200;
+  font-size: 1rem;
+}
+
+.formInput,
+.formTextarea {
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #000000;
+  font-size: 0rem;
+  max-width: 80%;
+  min-height: 10%;
+  transition: all 0.3s ease;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  outline: none;
+  border-color: #3498db;
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+
+.whatsappButton,
+.emailButton {
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  border: none;
+  font-size: 0.9rem;
+  min-width: 150px;
+}
+
+
+.emailButton {
+  background-color: #D44638;
+  color: white;
+}
+
+
+/* Media Queries Corregidas */
+
+@media (max-width: 480px) {
+  .contactSection {
+    padding: 1.5rem;
+  }
+  
+  .contactTitle {
+    font-size: 1.8rem;
+  }
+}
